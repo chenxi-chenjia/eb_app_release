@@ -1,0 +1,9 @@
+$Hwidth:320px,360px,375px,412px,414px,768px;
+$Swidth:750px;
+@each $i in $Hwidth{
+    @media screen and (min-width:#{$i}){
+        html{
+            font-size:100px * $i / $Swidth;
+        }
+    } 
+}

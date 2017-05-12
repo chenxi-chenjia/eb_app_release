@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGI,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,UAAoB,EAFtC,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,IAAoB,EAFtC,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,IAAoB,EAFtC,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,UAAoB,EAFtC,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,MAAoB,EAFtC,oCAAmC,CAC/B,IAAI,CACA,SAAS,CAAC,OAAoB",
+"sources": ["mobile-basis.scss"],
+"names": [],
+"file": "mobile-basis.css"
+}
