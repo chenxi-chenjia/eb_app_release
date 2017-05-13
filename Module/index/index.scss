@@ -941,6 +941,137 @@ $img_url:'../../Static/img/index/';
 		img{
 			width: 100%;
 		}
-		
+		.content-box{
+			position:absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding-top:.5rem;
+			text-align: center;
+			font-weight: 400;
+		}
+		a{
+			padding:.1rem .5rem;
+			border:1px solid #fff;
+			border-radius:4px;
+			color:#fff;
+		}
+		.icon{
+			width: .8rem;
+			height: .8rem;
+			background-size:.8rem .8rem;
+			margin: 0 auto;
+		}
+		.swiper-pagination-bullet{
+			background:#fff;
+		}
+
+	}
+	.floor_5{
+		background:#222;
+		color:#fff;
+		border-top:1px solid #666;
+		h5{
+			padding:10px 15px;
+			margin: 0;
+			border-bottom:1px solid #333;
+			position:relative;
+			&:after{
+				content:'';
+				width: 10px;
+				height: 10px;
+				border-bottom:1px solid #727272;
+				border-right:1px solid #727272;
+				transform: rotate(45deg);
+				position: absolute;
+				top:0;
+				bottom:0;
+				margin:auto 0;
+				right: 15px;
+				transition:all .5s ease-in-out;
+			}
+		}
+		ul{
+			padding:20px 25px;
+			margin-bottom: 0;
+		}
+		li{
+			list-style: none;
+			transition: all 0.5s ease;
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		a{
+			color:#999;
+			font-size: 12px;
+		}
+		.slide{
+			overflow: hidden;
+			height: 0;
+			margin-bottom: 0;
+		}
+		.slide-show{
+			h5:after{
+				transform: rotate(225deg);
+			}
+			li{
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+	}
+	.floor_6{
+		text-align: center;
+		padding: .8rem 0;
+		background:#222;
+		a{
+			color: #fff;
+			padding:.2rem 1rem;
+			border:1px solid #999;
+			border-radius:4px;
+			font-size: 13px;
+		}
+	}
+	footer{
+		background:#000;
+		color:#999;
+		text-align: center;
+		line-height: 20px;
+		font-size: 12px;
+		padding:0.3rem 0;
+		p{
+			margin: 0;
+		}
+	}
+	.fixed-box{
+		position:fixed;
+		width: .6rem;
+		height: .6rem;
+		border-radius:50%;
+		background:#000;
+		opacity: 0.3;
+		bottom:1rem;
+		right: .5rem;
+		z-index: 999;
+		span{
+			width: 40%;
+			height: 40%;
+			position:absolute;
+			top:50%;
+			left: 50%;
+			transform:translate(-50%,-25%);
+			&:after{
+				width: 100%;
+				height: 100%;
+				content:'';
+				display: block;
+				border-top:1px solid #999;
+				border-left:1px solid #999;
+				transform: rotate(45deg);
+				
+			}
+		}
+			
 	}
 }

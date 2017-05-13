@@ -141,7 +141,7 @@ var el=index_slide_data.map(function(v,i){
 			<div class="content-box">\
 				<div class="icon" style="background-image:url('+v.icon_url+')"></div>\
 				<div class="text">\
-					<h3>'+v.h3+'</h3>\
+					<h4>'+v.h3+'</h4>\
 					<p>'+v.p+'</p>\
 					<a href="#">下载APP体验</a>\
 				</div>\
@@ -151,11 +151,40 @@ var el=index_slide_data.map(function(v,i){
 })
 
 $('#mobile .floor_4').find('.swiper-wrapper').html(el);
-// var mySwiper4 = new Swiper('#mobile .floor_4 .swiper-container', {
-// 	autoplay: 5000,
-// 	loop:true,
-// 	paginationClickable :true,
-// 	simulateTouch : true,
-// 	slidesPerView : 'auto',
-// 	pagination : '.swiper-pagination'
-// })
+var mySwiper4 = new Swiper('#mobile .floor_4 .swiper-container', {
+	autoplay: 5000,
+	loop:true,
+	paginationClickable :true,
+	simulateTouch : true,
+	slidesPerView : 'auto',
+	pagination : '.swiper-pagination'
+})
+
+
+$('#mobile .floor_5').find('.slide-box').each(function(i,v){
+	var slide_delay_arr=new Array();
+	for(let i=0;i<$(this).find('li').length;i++){
+		slide_delay_arr.unshift(i*0.1);
+	}
+	$(v).find('li').each(function(i,v){
+		$(v).css('transition-delay',slide_delay_arr[i]+'s');
+	})
+	$(v).find('.slide').css('transition','all '+(slide_delay_arr[0]+0.5)+'s ease-in-out')
+})
+$('#mobile .floor_5').on('click','h5',function(){
+	var flag=$(this).closest('.slide-box').hasClass('slide-show');
+	if(flag){
+		$(this).closest('.slide-box').removeClass('slide-show');
+		$(this).closest('.slide-box').find('.slide').css('height','0');
+	}else{
+		$(this).closest('.floor_5').find('.slide-show').find('.slide').css('height',0);
+		$(this).closest('.floor_5').find('.slide-show').removeClass('slide-show');
+		var height=$(this).closest('.slide-box').find('ul').outerHeight();
+		$(this).closest('.slide-box').addClass('slide-show');
+		$(this).closest('.slide-box').find('.slide').css('height',height);
+	}
+})
+//回到顶部
+$('#mobile .fixed-box').on('click',function(){
+	$('body,html').animate({'scrollTop':0});
+})
