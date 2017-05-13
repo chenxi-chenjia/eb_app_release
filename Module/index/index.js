@@ -171,7 +171,7 @@ $('#mobile .floor_5').find('.slide-box').each(function(i,v){
 	})
 	$(v).find('.slide').css('transition','all '+(slide_delay_arr[0]+0.5)+'s ease-in-out')
 })
-$('#mobile .floor_5').on('click','h5',function(){
+$('#mobile .floor_5').on('touchend','h5',function(){
 	var flag=$(this).closest('.slide-box').hasClass('slide-show');
 	if(flag){
 		$(this).closest('.slide-box').removeClass('slide-show');
@@ -185,6 +185,6 @@ $('#mobile .floor_5').on('click','h5',function(){
 	}
 })
 //回到顶部
-$('#mobile .fixed-box').on('click',function(){
+$('#mobile .fixed-box').on('touchend',function(){
 	$('body,html').animate({'scrollTop':0});
 })
