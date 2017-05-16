@@ -102,17 +102,6 @@ $(window).scroll(function(){
 	}
 })
 
-// 回到顶部
-$(window).scroll(function(){
-	if($(window).scrollTop()>=100){
-		$('#pc .fixed-box').find('li.back-top').css('visibility','visible');
-	}else{
-		$('#pc .fixed-box').find('li.back-top').css('visibility','hidden');
-	}
-})
-$('#pc .fixed-box').find('li.back-top').on('click',function(){
-	$('body,html').animate({'scrollTop':0});
-})
 
 
 
@@ -124,14 +113,7 @@ $('#pc .fixed-box').find('li.back-top').on('click',function(){
 
 
 ///////////////////////////////////////////////////////mobile
-var mySwiper3 = new Swiper('#mobile .banner .swiper-container', {
-	autoplay: 5000,
-	loop:true,
-	pagination : '.swiper-pagination',
-	paginationClickable :true,
-	effect : 'silde',
-	simulateTouch : true
-})
+
 
 //底部banner
 var el=index_slide_data.map(function(v,i){
@@ -160,31 +142,14 @@ var mySwiper4 = new Swiper('#mobile .floor_4 .swiper-container', {
 	pagination : '.swiper-pagination'
 })
 
+var mySwiper3 = new Swiper('#mobile .banner .swiper-container', {
+	autoplay: 5000,
+	loop:true,
+	pagination : '.swiper-pagination',
+	paginationClickable :true,
+	effect : 'silde',
+	simulateTouch : true
+})
 
-$('#mobile .floor_5').find('.slide-box').each(function(i,v){
-	var slide_delay_arr=new Array();
-	for(let i=0;i<$(this).find('li').length;i++){
-		slide_delay_arr.unshift(i*0.1);
-	}
-	$(v).find('li').each(function(i,v){
-		$(v).css('transition-delay',slide_delay_arr[i]+'s');
-	})
-	$(v).find('.slide').css('transition','all '+(slide_delay_arr[0]+0.5)+'s ease-in-out')
-})
-$('#mobile .floor_5').on('touchend','h5',function(){
-	var flag=$(this).closest('.slide-box').hasClass('slide-show');
-	if(flag){
-		$(this).closest('.slide-box').removeClass('slide-show');
-		$(this).closest('.slide-box').find('.slide').css('height','0');
-	}else{
-		$(this).closest('.floor_5').find('.slide-show').find('.slide').css('height',0);
-		$(this).closest('.floor_5').find('.slide-show').removeClass('slide-show');
-		var height=$(this).closest('.slide-box').find('ul').outerHeight();
-		$(this).closest('.slide-box').addClass('slide-show');
-		$(this).closest('.slide-box').find('.slide').css('height',height);
-	}
-})
-//回到顶部
-$('#mobile .fixed-box').on('touchend',function(){
-	$('body,html').animate({'scrollTop':0});
-})
+
+
